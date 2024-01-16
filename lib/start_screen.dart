@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({
+  final void Function() startQuiz;
+
+  const StartScreen(
+    this.startQuiz, {
     super.key,
   });
 
@@ -14,7 +17,7 @@ class StartScreen extends StatelessWidget {
           Image.asset(
             'assets/images/quiz-logo.png',
             width: 300,
-            color: Color.fromARGB(144, 255, 255, 255),
+            color: const Color.fromARGB(144, 255, 255, 255),
           ),
           const SizedBox(
             height: 50,
@@ -26,28 +29,8 @@ class StartScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          // my option
-          // ElevatedButton(
-          //   onPressed: () {},
-          //   style: ButtonStyle(
-          //     backgroundColor: MaterialStateProperty.all(
-          //         const Color.fromARGB(255, 98, 43, 249)),
-          //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          //       const RoundedRectangleBorder(
-          //         borderRadius: BorderRadius.zero,
-          //         side: BorderSide(
-          //           color: Color.fromARGB(255, 98, 43, 249),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          //   child: const Text(
-          //     'Start quiz',
-          //     style: TextStyle(color: Colors.white),
-          //   ),
-          // ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
